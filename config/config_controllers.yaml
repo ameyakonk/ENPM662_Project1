@@ -1,0 +1,42 @@
+# Robot name goes here
+enpm662_proj1_urdf:
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  rear_drive:
+    type: joint_state_controller/JointStateController 
+    joint: "rear_drive_joint"
+    pid : {p: 100.0 , i: 0.0 , d: 0.0} 
+
+  # Controller 2
+  left_front_steer:
+    type: joint_state_controller/JointStateController 
+    joint: "left_front_steer_joint"
+    pid : {p: 100.0 , i: 0.0 , d: 0.0} 
+
+  # Controller 3
+  left_wheel:
+    type: joint_state_controller/JointStateController 
+    joint: "left_wheel_joint"
+    pid : {p: 100.0 , i: 0.0 , d: 0.0}
+
+  # Controller 4
+  right_front_steer:
+    type: joint_state_controller/JointStateController 
+    joint: "right_front_steer_joint"
+    pid : {p: 100.0 , i: 0.0 , d: 0.0}
+
+  # Controller 5
+  right_wheel:
+    type: joint_state_controller/JointStateController 
+    joint: "right_wheel_joint"
+    pid : {p: 100.0 , i: 0.0 , d: 0.0}
+
+  # ....
+  # Controller n
+
+
+ 
