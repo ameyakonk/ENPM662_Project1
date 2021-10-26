@@ -1,5 +1,5 @@
 # Robot name goes here
-enpm662_proj1_urdf:
+mini_car:
   # default controller
   joint_state_controller:
     type: joint_state_controller/JointStateController

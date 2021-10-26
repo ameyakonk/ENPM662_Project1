@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <!-- Name your robot here -->
-<robot name ="enpm662_proj1_urdf" xmlns:xacro="http://wiki.ros.org/xacro">
+<robot name ="mini_car" xmlns:xacro="http://wiki.ros.org/xacro">
 
 <!-- Include your urdf files here -->
 	<!-- Include Robot's urdf filepath -->
@@ -40,7 +40,7 @@
             </ray>
             <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
             	<!-- Use topic name as /my_robot/scan -->
-				<topicName></topicName> 
+				<topicName>/my_robot/scan</topicName> 
 				<frameName>laser_frame</frameName>
 			</plugin>
 		</sensor>
