@@ -4,17 +4,17 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
 <!-- =================================================================================== -->
 <!-- Name your robot here -->
-<robot name="enpm662_proj1_urdf">
-  <transmission name="dummy_trans">
+<robot name="mini_car">
+  <!--transmission name="dummy_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="dummy_joint">
       <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="dummy_motor">
       <mechanicalReduction>50</mechanicalReduction>
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardwareInterface/EffortJointInterface</hardwareInterface>
     </actuator>
-  </transmission>
+  </transmission-->
   <transmission name="Rear_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="rear_drive_joint">
@@ -333,7 +333,7 @@
   </gazebo>
   <!-- Create a joint between your robot and sensor -->
   <joint name="lidar_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.18"/>
+    <origin rpy="0 0 0" xyz="0 0 0.25"/>
     <parent link="chassis"/>
     <child link="base_laser"/>
   </joint>

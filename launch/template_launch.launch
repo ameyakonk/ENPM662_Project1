@@ -35,7 +35,7 @@
 
     <!-- Controller spawner: Starts all the defined controllers with their configs. Just add your controller names defined in your config file into the args tag below   -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    	output="screen" ns="/simple_car" args="joint_state_controller rear_drive left_front_steer left_wheel right_front_steer right_wheel" />
+    	output="screen" ns="/simple_car/controller_manager" args="joint_state_controller rear_drive left_front_steer left_wheel right_front_steer right_wheel" />
 
 
     <!-- A node to publish the robot states onto ros network -->
