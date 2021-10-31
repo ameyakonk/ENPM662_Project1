@@ -5,8 +5,8 @@
 <!-- Include your urdf files here -->
 	<!-- Include Robot's urdf filepath -->
 	<!-- Include Lidar's urdf filepath -->
-	<xacro:include filename="/home/ameya/catkin_ws/src/enpm662_proj1_urdf/urdf/enpm662_proj1_urdf.urdf"/>
-	<xacro:include filename="/home/ameya/catkin_ws/src/enpm662_proj1_urdf/urdf/ydlidar.urdf"/>
+	<xacro:include filename="/home/ninadharish/catkin_ws/src/enpm662_proj1_urdf/urdf/enpm662_proj1_urdf.urdf"/>
+	<xacro:include filename="/home/ninadharish/catkin_ws/src/enpm662_proj1_urdf/urdf/ydlidar.urdf"/>
 
 <!-- Add your gazebo sensors here -->
 <gazebo reference="base_laser">

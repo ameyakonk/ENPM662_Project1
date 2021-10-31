@@ -60,11 +60,15 @@ def vels(speed,turn):
 if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
     
-    rospy.init_node('turtlebot_teleop')
+    rospy.init_node('mini_car_teleop')
 
-    pub_right = rospy.Publisher('/mini_car/steering_right/command', Float64, queue_size=10) # Add your topic here between ''. Eg '/my_robot/steering_controller/command'
-    pub_left = rospy.Publisher('', Float64, queue_size=10)
-    pub_move = rospy.Publisher('', Float64, queue_size=10) # Add your topic for move here '' Eg '/my_robot/longitudinal_controller/command'
+    pub_right_1 = rospy.Publisher('/mini_car/right_front_steer_controller/command', Float64, queue_size=10) # Add your topic here between ''. Eg '/my_robot/steering_controller/command'
+    pub_right_2 = rospy.Publisher('/mini_car/left_front_steer_controller/command', Float64, queue_size=10)
+    pub_left_1 = rospy.Publisher('/mini_car/left_front_steer_controller/command', Float64, queue_size=10) # Add your topic here between ''. Eg '/my_robot/steering_controller/command'
+    pub_left_2 = rospy.Publisher('/mini_car/right_front_steer_controller/command', Float64, queue_size=10)
+    pub_move_1 = rospy.Publisher('/mini_car/rear_drive_controller/command', Float64, queue_size=10) # Add your topic for move here '' Eg '/my_robot/longitudinal_controller/command'
+    pub_move_2 = rospy.Publisher('/mini_car/left_wheel_controller/command', Float64, queue_size=10)
+    pub_move_3 = rospy.Publisher('/mini_car/right_wheel_controller/command', Float64, queue_size=10)
 
     x = 0
     th = 0
@@ -123,18 +127,26 @@ if __name__=="__main__":
             else:
                 control_turn = target_turn
 
-            pub_right.publish(control_turn) # publish the turn command.
-            pub_left.publish(control_turn) # publish the turn command.
-            pub_move.publish(control_speed) # publish the control speed. 
+            pub_right_1.publish(control_turn) # publish the turn command.
+            pub_right_2.publish(control_turn)
+            pub_left_1.publish(control_turn) # publish the turn command.
+            pub_left_2.publish(control_turn)
+            pub_move_1.publish(control_speed) # publish the control speed. 
+            pub_move_2.publish(control_speed)
+            pub_move_3.publish(control_speed)
 
 
     except:
         print e
 
     finally:
-        pub_right.publish(control_turn)
-        pub_left.publish(control_turn)
-        pub_move.publish(control_speed)
+        pub_right_1.publish(control_turn)
+        pub_right_2.publish(control_turn)
+        pub_left_1.publish(control_turn)
+        pub_left_2.publish(control_turn)
+        pub_move_1.publish(control_speed)  
+        pub_move_2.publish(control_speed)
+        pub_move_3.publish(control_speed)
         # twist = Twist()
         # twist.linear.x = 0; twist.linear.y = 0; twist.linear.z = 0
         # twist.angular.x = 0; twist.angular.y = 0; twist.angular.z = 0

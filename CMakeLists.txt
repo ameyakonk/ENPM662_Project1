@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(enpm662_proj1_urdf)
+project(mini_car)
 
 find_package(catkin REQUIRED)
 

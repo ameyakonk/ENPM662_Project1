@@ -6,31 +6,31 @@ mini_car:
     publish_rate: 50
 
   # Controller 1
-  rear_drive:
+  rear_drive_controller:
     type: joint_state_controller/JointStateController 
     joint: "rear_drive_joint"
     pid : {p: 100.0 , i: 0.0 , d: 0.0} 
 
   # Controller 2
-  left_front_steer:
+  left_front_steer_controller:
     type: joint_state_controller/JointStateController 
     joint: "left_front_steer_joint"
     pid : {p: 100.0 , i: 0.0 , d: 0.0} 
 
   # Controller 3
-  left_wheel:
+  left_wheel_controller:
     type: joint_state_controller/JointStateController 
     joint: "left_wheel_joint"
     pid : {p: 100.0 , i: 0.0 , d: 0.0}
 
   # Controller 4
-  right_front_steer:
+  right_front_steer_controller:
     type: joint_state_controller/JointStateController 
     joint: "right_front_steer_joint"
     pid : {p: 100.0 , i: 0.0 , d: 0.0}
 
   # Controller 5
-  right_wheel:
+  right_wheel_controller:
     type: joint_state_controller/JointStateController 
     joint: "right_wheel_joint"
     pid : {p: 100.0 , i: 0.0 , d: 0.0}
